@@ -56,10 +56,3 @@ export const activeFilterChanged = (active) => {
     payload: active,
   };
 };
-
-export const addFilter = (filter) => {
-  return {
-    type: "ADD_FILTER",
-    filter,
-  };
-};

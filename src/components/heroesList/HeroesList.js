@@ -1,7 +1,8 @@
 import { useHttp } from "../../hooks/http.hook";
 import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import { createSelector } from "reselect";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import {
   heroesFetching,
   heroesFetched,
@@ -10,24 +11,37 @@ import {
 } from "../../actions";
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from "../spinner/Spinner";
-import { selectVisibleHeroes } from "../../selectors/selectors";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./HeroesList.scss";
-// Задача для этого компонента:
-// При клике на "крестик" идет удаление персонажа из общего состояния
-// Усложненная задача:
-// Удаление идет и с json файла при помощи метода DELETE
 
 const HeroesList = () => {
+  //   const { activeFilter, heroes } = useSelector((state) => ({
+  //     activeFilter: state.filtersReducer.activeFilter,
+  //     heroes: state.heroesReducer.heroes,
+  //   }));
+
+  //   const filteredHeroes = useSelector((state) => {
+  //     if (state.filtersReducer.activeFilter === "all") {
+  //       return state.heroesReducer.heroes;
+  //     }
+
+  //     return state.heroesReducer.heroes.filter(
+  //       (item) => item.element === state.filtersReducer.activeFilter
+  //     );
+  //   });
+  const filteredHeroesSelector = createSelector(
+    (state) => state.filtersReducer.activeFilter,
+    (state) => state.heroesReducer.heroes,
+    (filter, heroes) => {
+      if (filter === "all") {
+        return heroes;
+      }
+
+      return heroes.filter((item) => item.element === filter);
+    }
+  );
+
+  const filteredHeroes = useSelector(filteredHeroesSelector);
   const { heroesLoadingStatus } = useSelector((state) => state.heroesReducer);
-
-  const activeFilter = useSelector(
-    (state) => state.filtersReducer.activeFilter
-  );
-
-  const heroes = useSelector((state) =>
-    selectVisibleHeroes(state, activeFilter)
-  );
 
   const dispatch = useDispatch();
   const { request } = useHttp();
@@ -75,7 +89,7 @@ const HeroesList = () => {
     });
   };
 
-  const elements = renderHeroesList(heroes);
+  const elements = renderHeroesList(filteredHeroes);
 
   return <TransitionGroup component="ul">{elements}</TransitionGroup>;
 };
