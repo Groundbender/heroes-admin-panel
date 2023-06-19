@@ -116,11 +116,6 @@ const HeroesAddForm = () => {
           id="element"
           name="element"
         >
-          {/* <option>Я владею элементом...</option> */}
-          {/* <option value="fire">Огонь</option>
-          <option value="water">Вода</option>
-          <option value="wind">Ветер</option>
-          <option value="earth">Земля</option> */}
           {options}
         </select>
       </div>

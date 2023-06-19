@@ -1,0 +1,20 @@
+.hero-enter {
+  opacity: 0;
+  transform: translateX(-350px);
+}
+.hero-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+
+  transition: all 500ms ease-in;
+}
+.hero-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.hero-exit-active {
+  opacity: 0;
+  transform: translateX(-350px);
+
+  transition: all 500ms ease-in;
+}

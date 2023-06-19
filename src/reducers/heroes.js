@@ -1,24 +1,5 @@
 const initialState = {
-  heroes: [
-    {
-      id: "0",
-      name: "Герой какой-то",
-      description: "Что что что ",
-      element: "fire",
-    },
-    {
-      id: "1",
-      name: "Герой какой-то",
-      description: "Что что что ",
-      element: "water",
-    },
-    {
-      id: "2",
-      name: "Герой какой-то",
-      description: "Что что что ",
-      element: "earth",
-    },
-  ],
+  heroes: [],
   heroesLoadingStatus: "idle",
   filters: [],
 };

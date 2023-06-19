@@ -1,9 +1,15 @@
 {
   "heroes": [
     {
-      "id": "064ecd4f-b167-431a-8afa-bd2bc0fecd89",
-      "name": "Damir",
-      "description": "Я пламя",
+      "id": "bb04c670-57fd-48bc-aa70-000693187c5c",
+      "name": "asdasdasd",
+      "description": "dsfsdfsdfsdfs",
+      "element": "water"
+    },
+    {
+      "id": "28eb43e5-08b3-4374-9de8-4c3de5fd2483",
+      "name": "Dmair",
+      "description": "Throw fireballs",
       "element": "fire"
     }
   ],
