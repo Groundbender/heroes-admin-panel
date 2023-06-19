@@ -1,0 +1,37 @@
+{
+  "heroes": [
+    {
+      "id": "064ecd4f-b167-431a-8afa-bd2bc0fecd89",
+      "name": "Damir",
+      "description": "Я пламя",
+      "element": "fire"
+    }
+  ],
+  "filters": [
+    {
+      "value": "all",
+      "label": "Все",
+      "className": "btn-outline-dark"
+    },
+    {
+      "value": "fire",
+      "label": "Огонь",
+      "className": "btn-danger"
+    },
+    {
+      "value": "water",
+      "label": "Вода",
+      "className": "btn-primary"
+    },
+    {
+      "value": "wind",
+      "label": "Ветер",
+      "className": "btn-success"
+    },
+    {
+      "value": "earth",
+      "label": "Земля",
+      "className": "btn-secondary"
+    }
+  ]
+}
