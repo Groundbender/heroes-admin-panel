@@ -7,28 +7,22 @@
       "element": "fire"
     },
     {
-      "id": "38f5e9d2-b94a-48af-bfd3-7bb3d18718fd",
-      "name": "asdasasd",
-      "description": "asdasdasd",
-      "element": "water"
-    },
-    {
       "id": "41c3983c-8cf2-48b7-a3b6-aecec6f341bf",
       "name": "asdasdasdasdsa",
       "description": "sadasdsdvd",
       "element": "fire"
     },
     {
-      "id": "79c06ae2-f7b3-4288-b239-aaa179e186ef",
-      "name": "Windstorm",
-      "description": "sadasdasd",
-      "element": "water"
+      "id": "1c528a39-0f75-4caa-9a81-37ceee88415e",
+      "name": "sadasd",
+      "description": "asdasd",
+      "element": "fire"
     },
     {
-      "id": "d396a906-fd04-47cc-a84a-975bfe160add",
-      "name": "sadasdasd",
-      "description": "asdasdasd",
-      "element": "wind"
+      "id": "84307eef-b342-4349-af99-675cb1446101",
+      "name": "asdasdasd",
+      "description": "sdaasdasd",
+      "element": "water"
     }
   ],
   "filters": [
