@@ -3,7 +3,7 @@ import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { fetchHeroes, deleteHeroAction } from "../../actions";
+import { fetchHeroes, heroDeleted } from "../../actions";
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from "../spinner/Spinner";
 import "./HeroesList.scss";
@@ -50,7 +50,7 @@ const HeroesList = () => {
   const deleteHero = useCallback(
     (id) => {
       request(`http://localhost:3001/heroes/${id}`, "DELETE")
-        .then(dispatch(deleteHeroAction(id)))
+        .then(dispatch(heroDeleted(id)))
         .catch((err) => console.log(err));
     },
     [request]

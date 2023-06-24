@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addHeroAction } from "../../actions";
+import { heroCreated } from "../../actions";
 import { useHttp } from "../../hooks/http.hook";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -27,7 +27,7 @@ const HeroesAddForm = () => {
       element: formValue.element,
     };
     request(`http://localhost:3001/heroes`, "POST", JSON.stringify(newHero))
-      .then(dispatch(addHeroAction(newHero)))
+      .then(dispatch(heroCreated(newHero)))
       .catch((err) => console.error(err))
       .finally(
         setFormValue({

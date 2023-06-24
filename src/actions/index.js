@@ -1,3 +1,5 @@
+import { createAction } from "@reduxjs/toolkit";
+
 export const fetchHeroes = (request) => (dispatch) => {
   dispatch(heroesFetching());
   request("http://localhost:3001/heroes")
@@ -12,38 +14,49 @@ export const fetchFilters = (request) => (dispatch) => {
     .catch(() => dispatch(filtersFetchingError()));
 };
 
-export const heroesFetching = () => {
-  return {
-    type: "HEROES_FETCHING",
-  };
-};
+// export const heroesFetching = () => {
+//   return {
+//     type: "HEROES_FETCHING",
+//   };
+// };
 
-export const heroesFetched = (heroes) => {
-  return {
-    type: "HEROES_FETCHED",
-    payload: heroes,
-  };
-};
+export const heroesFetching = createAction("HEROES_FETCHING");
 
-export const heroesFetchingError = () => {
-  return {
-    type: "HEROES_FETCHING_ERROR",
-  };
-};
+// export const heroesFetched = (heroes) => {
+//   return {
+//     type: "HEROES_FETCHED",
+//     payload: heroes,
+//   };
+// };
 
-export const deleteHeroAction = (id) => {
-  return {
-    type: "DELETE_HERO",
-    payload: id,
-  };
-};
+// в payload герои передадутся автоматически
+export const heroesFetched = createAction("HEROES_FETCHED");
 
-export const addHeroAction = (hero) => {
-  return {
-    type: "ADD_HERO",
-    payload: hero,
-  };
-};
+// export const heroesFetchingError = () => {
+//   return {
+//     type: "HEROES_FETCHING_ERROR",
+//   };
+// };
+
+export const heroesFetchingError = createAction("HEROES_FETCHING_ERROR");
+
+// export const heroDeleted = (id) => {
+//   return {
+//     type: "HERO_DELETED",
+//     payload: id,
+//   };
+// };
+
+export const heroDeleted = createAction("HERO_DELETED");
+
+// export const heroCreated = (hero) => {
+//   return {
+//     type: "HERO_CREATED",
+//     payload: hero,
+//   };
+// };
+
+export const heroCreated = createAction("HERO_CREATED");
 
 export const filtersFetching = () => {
   return {
