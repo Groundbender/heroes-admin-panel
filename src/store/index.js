@@ -1,6 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import heroesReducer from "../reducers/heroes";
-import filtersReducer from "../reducers/filters";
+// import heroesReducer from "../reducers/heroes";
+// import filtersReducer from "../reducers/filters";
+import heroes from "../components/heroesList/heroesSlice";
+import filters from "../components/heroesFilters/heroesFiltersSLice";
 
 //store в ф-ии - store = {dispatch, getState}
 const stringMiddleware = () => (next) => (action) => {
@@ -14,8 +16,8 @@ const stringMiddleware = () => (next) => (action) => {
 
 const store = configureStore({
   reducer: {
-    heroesReducer,
-    filtersReducer,
+    heroes,
+    filters,
   }, // obj  {heroesReducer,filtersReducer,}
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(stringMiddleware), // уже содержит thunk, middleware для иммутабельности и middleware проверяющий значения в stroe
