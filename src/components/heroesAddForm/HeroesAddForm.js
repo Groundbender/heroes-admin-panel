@@ -3,13 +3,13 @@ import { heroCreated } from "../heroesList/heroesSlice";
 import { useHttp } from "../../hooks/http.hook";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-
+import { selectAll } from "../heroesFilters/heroesFiltersSLice";
 const HeroesAddForm = () => {
   const { request } = useHttp();
   const dispatch = useDispatch();
-  const { filtersLoadingStatus, filters } = useSelector(
-    (state) => state.filters
-  );
+  const { filtersLoadingStatus } = useSelector((state) => state.filters);
+
+  const filters = useSelector(selectAll);
 
   const [formValue, setFormValue] = useState({
     id: "",

@@ -1,34 +1,45 @@
 {
   "heroes": [
     {
-      "id": "28eb43e5-08b3-4374-9de8-4c3de5fd2483",
-      "name": "Dmair",
-      "description": "Throw fireballs",
-      "element": "fire"
+      "id": "5bf5be6f-7ecc-4882-88db-85aebe041e9e",
+      "name": "dassaddas",
+      "description": "asdasddas",
+      "element": "wind"
+    },
+    {
+      "id": "570e9a71-16c1-4c3e-b0b2-7c529b8dab56",
+      "name": "fsdfs",
+      "description": "asdasads",
+      "element": "water"
     }
   ],
   "filters": [
     {
+      "id": "all",
       "value": "all",
       "label": "Все",
       "className": "btn-outline-dark"
     },
     {
+      "id": "fire",
       "value": "fire",
       "label": "Огонь",
       "className": "btn-danger"
     },
     {
+      "id": "water",
       "value": "water",
       "label": "Вода",
       "className": "btn-primary"
     },
     {
+      "id": "wind",
       "value": "wind",
       "label": "Ветер",
       "className": "btn-success"
     },
     {
+      "id": "earth",
       "value": "earth",
       "label": "Земля",
       "className": "btn-secondary"
